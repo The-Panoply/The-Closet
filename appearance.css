@@ -1,0 +1,37 @@
+/* Automatic system appearance. Light-mode layouts and artwork remain unchanged. */
+:root { color-scheme: light; }
+/* Constrain tall product images to the dialog photo area at narrow widths. */
+.modal-photo { overflow: hidden; }
+.modal-photo img { width:100%; height:100%; min-height:0; object-fit:contain; }
+@media (prefers-color-scheme: dark) {
+ :root { color-scheme: dark; }
+ html, body { background: var(--app-bg); color: var(--app-ink); }
+ .panoply-footer { background: var(--app-bg); color: var(--app-ink); border-color: var(--app-line); }
+ .panoply-footer-brand { color: #d1b47c; }
+ .panoply-footer-brand::before, .panoply-footer-brand::after { background: #d1b47c; }
+ .panoply-footer-sites a { color: #b9c8d1; }
+ .panoply-footer-sites a:hover { color: #e2c68e; }
+ input::placeholder { color: #a8b7c1; opacity: 1; }
+ ::selection { background: #536b7d; color: #fff; }
+}
+
+@media (prefers-color-scheme: dark) {
+ :root { --app-bg:#192522; --app-ink:#e3ebe6; --app-line:#40544b; --paper:var(--app-bg); --ink:var(--app-ink); --muted:#b1c2b8; --line:var(--app-line); --white:#24352e; --pine:#9cc8b8; }
+ .topbar { background:#202e28; }
+ .closet-wordmark { color:var(--ink); }
+ .panoply-wordmark { color:#d1b47c; }
+ .filter.active { background:#c6dfd2; border-color:#c6dfd2; color:#192522; }
+ .filter:hover { border-color:#b5d2c2; }
+ .search input:focus { box-shadow:0 0 0 3px #9cc8b833; }
+ .hero { background:#254b4a; }
+ /* Product photography retains its pale studio surface and original colors. */
+ .photo, .modal-photo { background:var(--product-surface); }
+ .card { background:#24352e; }
+ .card-info { background:#24352e; }
+ .placeholder { background:linear-gradient(145deg,#30473a,#24382e); color:#d7e6dc; }
+ .placeholder-color { color:#c0d1c5; }
+ .count { background:#24352ef2; border-color:var(--line); }
+ .close { background:#24352e; color:var(--ink); }
+ dialog { box-shadow:0 28px 100px #0008; }
+ dialog::backdrop { background:#07130fbb; }
+}
